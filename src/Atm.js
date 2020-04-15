@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import Screen from "./Screen";
+import Controls from "./Controls";
 
 const Container = styled.div`
   background-color: #000;
   color: #0c0;
   font-family: monospace;
-  font-size: 16px;
+  font-size: 18px;
   min-height: 500px;
   margin: 20px auto;
   padding: 10px;
@@ -14,9 +16,40 @@ const Container = styled.div`
 `;
 
 const Atm = ({ accounts }) => {
+  const [
+    accountBalances,
+    setAccountBalances,
+  ] = React.useState(accounts);
+
+  const [
+    inputStack,
+    setInputStack,
+  ] = React.useState([]);
+
+  const [
+    activeAccount,
+    setActiveAccount,
+  ] = React.useState();
+
+  const inputHandler = (char) => {
+    // Delete last character entered
+    if (char === 'D') {
+      setInputStack(inputStack => inputStack.slice(1));
+    } else {
+      setInputStack(inputStack => [char, ...inputStack]);
+    }
+  };
+
   return (
     <Container>
-      <h1>ATM Interface</h1>
+      <Screen
+        accounts={accountBalances}
+        activeAccount={activeAccount}
+        setActiveAccount={setActiveAccount}
+        inputStack={inputStack}
+        setInputStack={setInputStack}
+      />
+      <Controls inputHandler={inputHandler} />
     </Container>
   );
 };
