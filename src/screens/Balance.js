@@ -29,12 +29,15 @@ const Balance = ({
       setActiveAccountId();
       setInputStack([]);
       break;
+    default:
+      break;
   }
 
   return (
     <BalanceContainer>
       <div>Balance: {CurrencyFormatter.format(activeAccount.balance)} </div>
       <div>Limit: {CurrencyFormatter.format(activeAccount.limit)}</div>
+      <div>Withdrawn today: {CurrencyFormatter.format(activeAccount.withdrawn)}</div>
       <div>&nbsp;</div>
       <div>Withdraw: 1</div>
       <div>Deposit: 2</div>

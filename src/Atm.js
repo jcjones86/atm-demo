@@ -44,6 +44,7 @@ const Atm = ({ accounts }) => {
     <Container>
       <Screen
         accounts={accountBalances}
+        setAccounts={setAccountBalances}
         activeAccountId={activeAccountId}
         setActiveAccountId={setActiveAccountId}
         inputStack={inputStack}

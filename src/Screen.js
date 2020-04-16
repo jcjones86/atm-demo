@@ -11,6 +11,7 @@ const ScreenContainer = styled.div`
 
 const Screen = ({
   accounts,
+  setAccounts,
   activeAccountId,
   setActiveAccountId,
   inputStack,
@@ -21,8 +22,6 @@ const Screen = ({
     setActiveScreen,
   ] = React.useState('ENTER_PIN');
 
-  console.log('ACTIVE: ', activeScreen);
-  
   return (
     <ScreenContainer>
       <h1>Grocer's Credit Union</h1>
@@ -49,6 +48,7 @@ const Screen = ({
       {activeScreen === 'WITHDRAW' && (
         <Withdraw
           accounts={accounts}
+          setAccounts={setAccounts}
           activeAccountId={activeAccountId}
           setActiveAccountId={setActiveAccountId}
           inputStack={inputStack}
@@ -59,6 +59,7 @@ const Screen = ({
       {activeScreen === 'DEPOSIT' && (
         <Deposit
           accounts={accounts}
+          setAccounts={setAccounts}
           activeAccountId={activeAccountId}
           setActiveAccountId={setActiveAccountId}
           inputStack={inputStack}
