@@ -5,9 +5,10 @@ const EnterPinContainer = styled.div``;
 
 const EnterPin = ({
   accounts,
-  setActiveAccount,
+  setActiveAccountId,
   inputStack,
   setInputStack,
+  setActiveScreen,
 }) => {
   const reversedStack = inputStack.join('').split('').reverse().join('');
 
@@ -16,9 +17,11 @@ const EnterPin = ({
     const matched = accounts.filter(a => a.pin === reversedStack);
 
     if (matched && matched.length > 0) {
-      setActiveAccount(matched[0].pin);
+      setActiveAccountId(matched[0].pin);
       // clear input stack
       setInputStack([]);
+      // set active screen to balance
+      setActiveScreen('BALANCE');
     }
   }
 

@@ -27,8 +27,8 @@ const Atm = ({ accounts }) => {
   ] = React.useState([]);
 
   const [
-    activeAccount,
-    setActiveAccount,
+    activeAccountId,
+    setActiveAccountId,
   ] = React.useState();
 
   const inputHandler = (char) => {
@@ -44,8 +44,8 @@ const Atm = ({ accounts }) => {
     <Container>
       <Screen
         accounts={accountBalances}
-        activeAccount={activeAccount}
-        setActiveAccount={setActiveAccount}
+        activeAccountId={activeAccountId}
+        setActiveAccountId={setActiveAccountId}
         inputStack={inputStack}
         setInputStack={setInputStack}
       />
