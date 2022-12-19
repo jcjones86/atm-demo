@@ -6,7 +6,7 @@ import Withdraw from "./screens/Withdraw";
 import Deposit from "./screens/Deposit";
 
 const ScreenContainer = styled.div`
-  min-height: 400px;
+  min-height: 225px;
 `;
 
 const Screen = ({

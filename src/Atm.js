@@ -8,9 +8,8 @@ const Container = styled.div`
   color: #0c0;
   font-family: monospace;
   font-size: 18px;
-  min-height: 500px;
   margin: 20px auto;
-  padding: 10px;
+  padding: 15px;
   text-align: center;
   width: calc(100vw - 120px);
 `;
